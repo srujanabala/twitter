@@ -1,0 +1,3 @@
+<h1>Welcome to Shitty Twitter!</h1>
+<p>Hi <%= @user.name %></p>
+<p>Click here to activate your account: <%= link_to "Confirm Your Email", confirm_user_url(@user, host: "shittytwitter.com") %></p>

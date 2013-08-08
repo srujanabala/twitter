@@ -1,0 +1,20 @@
+<h1>A Tweet</h1>
+<blockquote>
+  <p class = "lead"><%= @tweet.content %></p>
+  <p class = "muted">
+  	<small><em>By <%= @tweet.user.name %></em> | created at <%= @time.strftime("%l:%M %p on %b %d, %Y") %></small>
+  </p>
+</blockquote>
+<% @tweet.comments.each do |comment| %>
+<div><%= comment.author.handle %> says : <%= comment.body %></div>
+<% end %>
+
+<% if @current_user %>
+  <h4>Add a Comment</h4>
+  <%= form_for [@tweet, Comment.new] do |f| %>
+    <%= f.text_area :body %>
+    <div><%= f.submit "Post Comment", class: "btn" %></div>
+  <% end %>
+<% end %>
+
+<%= link_to "All Twats", tweets_path, class: "btn btn-success" %>

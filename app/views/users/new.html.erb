@@ -1,0 +1,13 @@
+<h1>Welcome to the REAL Twatter</h1>
+
+<%= form_for @user do |f| %>
+<%= f.error_messages %>
+
+<div> Name: <%= f.text_field :name %></div>
+<div> Email: <%= f.text_field :email %></div>
+<div> Handle: <%= f.text_field :handle %></div>
+<div> Password: <%= f.password_field :password %></div>
+<div> Password Confirmation: <%= f.password_field :password_confirmation %></div>
+
+<%= f.submit %>
+<% end %>
