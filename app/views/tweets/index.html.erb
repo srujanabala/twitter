@@ -1,5 +1,5 @@
-<h1>My Twats</h1>
+<h1>My Tweets</h1>
 <% @tweets.each do |tweet| %>
 	<p><%= tweet.content %> <em><%= tweet.content.size %> characters</em>, by <%= tweet.user.name %> <%= link_to 'Show', tweet_path(tweet), class: "btn btn-primary btn-mini" %></p>
 	<% end %>
-	<%= link_to 'Create a New Twat!!', new_tweet_path, class: "btn btn-success btn-large" %>
+	<%= link_to 'Create a New Tweet!!', new_tweet_path, class: "btn btn-success btn-large" %>
